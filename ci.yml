@@ -1,0 +1,9 @@
+prepare:
+  steps: []
+test:
+  steps: []
+run:
+  steps:
+    - name: Start Streamlit
+      command: /home/user/app/.venv/bin/streamlit run /home/user/app/app.py
+        --server.port 3000
