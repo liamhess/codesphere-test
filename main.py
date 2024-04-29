@@ -6,7 +6,7 @@ st.set_page_config(
     page_icon="💌"
 )
 
-st.title("Hacker News Aggregator ✌️")
+st.title("Interest Based Hacker News Aggregator ✌️")
 st.write("Just input a couple of your interests and your mail to get a daily newsletter with the most relevant Hacker News stories for you")
 
 with st.form(key="Form"):
@@ -17,7 +17,7 @@ with st.form(key="Form"):
         
 if submit_button:
     backend_calls.subscribe_user(email, interests)
-    st.write("Subscribed!!!")
+    st.success("You successfully subscribed! You will get a mail in a few seconds!", icon="✅")
 
 with st.form(key="Unsubscribe-Form"):
     st.write("Unsubscribe your E-Mail")
@@ -26,4 +26,4 @@ with st.form(key="Unsubscribe-Form"):
         
 if submit_button:
     backend_calls.unsubscribe_user(email)
-    st.write("Unsubscribed!!!")
+    st.success("You successfully unsubscribed! You will no longer receive emails!", icon="✅")
